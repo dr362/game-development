@@ -1,0 +1,196 @@
+--1) ჩემ მიერ გაკვეთილზე გადმოგზავნი კოდი გაანალიზეთ და დაწერეთ თუ რა გაიგეთ
+--local part = game.Workspace:WaitForChild("SpecialPart")
+--print("Part has been spawned")
+--part.Color = Color3.fromRGB(0, 255, 0)
+
+-- :WaitForChild - ის წარმოადგენს განვითარებულ wait ფუნქციას
+-- ის იქამდე შეაყოვნებს კოდს სანამ ობიექტს ვერ იპოვის კონკრეტულ ადგილზე
+
+
+local part = game.Workspace:FindFirstChild("SpecialPart")
+
+if part then
+	print("Part has been found")
+
+else
+	print("Part couldn't be found")
+end
+
+
+-- :FindFirstChild() - მეთოდი იპოვის გამოყენებულ ობიექტში შვილ ობიექტს
+-- რომლის სახელიც გადავეცით არგუმენტად და დააბრუნებს მას, 
+-- ხოლო თუ ვერ იპოვა მაშინ 
+-- დააბრუნებს nil მნიშვნელობას (ესეიგი არაფერს)
+--local part = script.Parent
+
+-- ობიექტის თვისებებს როგორიცაა: მოვლენა და კუთვნილება რომ მივწვდეთ ვიყეენბთ dot ნოტაციას
+-- .property .event
+
+-- რომ გამოვიყენოთ ობიექტზე მეთოდი ვწერთ :method
+
+--part.Touched:Connect(function(hit)
+
+--end)
+
+--wait(5)
+local part = Instance.new("Part", game.Workspace)
+part.Name = "SpecialPart"
+part.Anchored = true
+part.Position = Vector3.new(0, 10, 0)
+--this code creates a part in the workspace and is anchored, its position is changed and its name is changed
+--with Findfirst child the code does this:if the findfirstchild will work when the block spawns
+--then it is supossed to print that its spawned if findfirstchild works before the block spawns
+--then it is supossed to print that it couldn't be found
+--3) შექმენით KillBrick, რომელიც კლავს მხოლოდ იმ შემთხვევაში, თუ მოთამაშის სახელი ზუსტად უდრის "Player1"
+local createe = Instance.new("Part")
+createe.Touched:Connect(function(hit)
+	if hit.Parent.Humanoid.Name == "Player1" then
+		if hit.Parent:FindFirstChild("Humanoid") then
+			hit.Parent.Humanoid.Health = 0
+		end
+	end
+end)
+--7) შექმენით სკრიპტი, რომელიც 5 წამში ამატებს ახალ ნაწილს workspace-ში და მეორე სკრიპტში გამოიყენეთ WaitForChild, რომ დაელოდოთ მის გამოჩენას და ფერი შეუცვალოთ
+--8)სცადეთ მოძებნოთ ნაწილი FindFirstChild მეთოდით და თუ ვერ იპოვეთ, დაბეჭდეთ Output-ში "ვერ მოიძებნა"
+--9)
+--10)შექმენით 3 ნაწილი, რომლებსაც აქვს ClickDetector — პირველზე დაჭერისას იცვლება ფერი, მეორეზე ქრება, მესამეზე ზომას იმატებს
+local i = Instance.new("Part")
+local can = Instance.new("Part")
+local tellyouwattodo = Instance.new("Part")
+i = script.Parent
+local clickdetector = i.ClickDetector
+local change = true
+
+clickdetector.Mouseclick:Connect(function(player)
+	i.Color = Color3.new(255,0,0)
+	change = true
+end)
+can = script.Parent
+local clickdetector = can.ClickDetector
+local change = true
+
+clickdetector.Mouseclick:Connect(function(player)
+	can.size += 10
+	change = true
+end)
+tellyouwattodo = script.Parent
+local clickdetector = tellyouwattodo.ClickDetector
+local change = true
+
+clickdetector.Mouseclick:Connect(function(player)
+	tellyouwattodo.Position = Vector3.new(10,20,30)
+	change = true
+end)
+--11)შექმენით KillBrick, რომელიც არ კლავს მოთამაშეს მეორე შეხებამდე — პირველი შეხებისას მხოლოდ წერს Output-ში რომ შეეხო, მეორე შეხებაზე კლავს
+if createe * 2 then
+local createe = Instance.new("Part")
+createe.Touched:Connect(function(hit)
+	if hit.Parent:FindFirstChild("Humanoid") then
+		hit.Parent.Humanoid.Health = 0
+	end
+	if createe * 1 then
+		print(hit)
+	end
+end)
+end
+
+
+
+--1) შექმენით script, რომელშიც 5 წამის ლოდინის შემდეგ instance.new() მოვლენის საშვალებით შექმნით part ობიექტს workspace-ში, შექმნილი part შეინახეთ ცვლადში და შეუცვალეთ Name კუთვნილება "SpecialPart"-ით ასევე შეცვალეთ კუთვნილებები: Anchored: True Position: Vector3.new(0, 10, 0) ამის შემდეგ შექმენით მეორე script რომელშიც შეინახავთ SpecialPart-ის სახელის მქონე ობიექტს workspace-იდან error რომ აიცილოთ თავიდან იქამდე დაელოდეთ part-ის შექმნას რამდენი ხანიც საჭიროა (გამოიყენეთ :WaitForChild() მეთოდი, ამის შემდეგ დაბეჭდთ რომ part გაჩნდა და შეუცვალეთ ფერი მწვაედ
+wait(5)
+local create = Instance.new("Part")
+create.Name = "Specialpart"
+create.Anchored = true
+create.Position = Vector3.new(0,10,0)
+--2) შექმენით კიდევ ერთი script, რომელითაც შეეცდებით იპოვოთ ის ობიექტი რომელიც 5 წამში უნდა გააჩინოს წინა დავალების კოდმა და შეინახეთ ცვლადში, ამის შემდეგ სცადეთ ერთ-ერთი იმ ობიექტის ცვლადში შენახავა რომელიც უკვე არსებობს :FindFirstChild() მეთოდის გამოყენებით, კომენტარებით ახსენით რისთვის გამოიყენება waitforchild და findfirstchild მეთოდები დაწერეთ რა გასნხვავებაა მათ შორის
+--3) შექმენით KillBrick რომელიც player-ს დაღუპავს შეხებისას
+
+
+
+local wait = game.Workspace:WaitForChild("Specialpart")
+print("the part has been summoned")
+wait.Color = Color3.fromRGB(0,255,0)
+
+
+
+local find = game.Workspace:FindFirstChildChild("Specialpart")
+if find then
+	print("the Special part is here") --თუ find იპოვის ჩვენს ობიექტს დაიბეჭდება რაიმე რასაც პრინტში ჩავწერთ
+else
+	print("part is lost") -- თუ find ვერ იპოვის და არ დავბეჭდეთ არაფერი მაშინ ნილი დაიბეჭდება ხოლო თუ პრინტში რაიმე ჩავწერეთ მაშინ კი იმას დაბეჭდავს
+end
+
+
+
+wait(5)
+local create = Instance.new("Part")
+create.Name = "Specialpart"
+create.Anchored = true
+create.Position = Vector3.new(0,10,0)
+
+
+
+--4) შექმენით ნაწილი, რომელზეც დაჭერისას იცვლება ფერი წითელზე
+local block = script.Parent
+local clickdetector = block.ClickDetector
+local change = true
+
+clickdetector.Mouseclick:Connect(function(player)
+	block.Color = Color3.new(255,0,0)
+	change = true
+end)
+
+
+
+--5)შექმენით კარი, რომელიც ClickDetector-ის დაჭერისას იღება (შეიცვალოს პოზიცია y-ღერძზე)
+local door = script.Parent
+local clickdetector = door.ClickDetector
+
+local open = true
+
+clickdetector.Mouseclick:Connect(function(player)
+	wait(3)
+	door.Position.Y = Vector3.new(10)
+	open = true
+	door.Anchored = true
+end)
+
+
+
+--6)შექმენით ნაწილი, რომელზეც დაჭერისას ჩანს თუ ვინ დააკლიკა (დაწერეთ Output-ში მოთამაშის სახელი)
+local door = script.Parent
+if 
+	local clickdetector = door.ClickDetector
+	local open = true
+
+	clickdetector.Mouseclick:Connect(function(player)
+		wait(3)
+		door.Position.Y = Vector3.new(10)
+		open = true
+		door.Anchored = true
+	end)  then
+	print("sandrgabidzaGOA")
+end
+
+
+
+local FURRRRRY = Instance.new("Part")
+FURRRRRY.Name = "real"
+
+
+
+local int = Instance.new("Part")
+
+
+
+local waittttt = game.Workspace:WaitForChild("door")
+local door = script.Parent
+local clickdetector = door.ClickDetector
+
+local open = true
+
+clickdetector.Mouseclick:Connect(function(player)
+	wait(3)
+	door.Transparency = 0.7
+	open = true
+end)

@@ -1,0 +1,21 @@
+local item1 = Instance.new("Part")
+local item2 = Instance.new("Part")
+local item3 = Instance.new("Part")
+item1.Name = "Item 1"
+item2.Name = "Item 2"
+item3.Name = "Item 3"
+item1.Color = Color3.fromRGB(30,10,0)
+item2.Color = Color3.fromRGB(0,30,10)
+item3.Color = Color3.fromRGB(10,50,0)
+local hi = game.Workspace["day13"].cw.task2
+print(hi:GetChildren())
+
+
+
+local inst = Instance.new("Part")
+inst.Touched:Connect(function(hit)
+	if hit.Parent:FindFirstChild("Humanoid") then
+		local player = game.Players:GetPlayerFromCharacter(hit.Parent)
+		print(player)
+	end
+end)

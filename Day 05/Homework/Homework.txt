@@ -1,0 +1,44 @@
+game.Workspace.byebye.Position = Vector3.new(  
+	math.random(0, 100),
+	math.random(0, 100),
+	math.random(0, 100))
+game.Workspace.byebyebye.Position = Vector3.new(
+	math.random(0,100,0,100,0,100)
+)
+if game.Workspace.byebye.Position.X > game.Workspace.byebyebye.Position.X then
+	print("byebye is greater than byebyebye")
+end
+if game.Workspace.byebyebyebye.Position.X < 0 then
+	game.Workspace.byebyebyebye.Color3.new(0,0,1)
+end
+if game.Workspace.byebyebyebye.Position.X > 0 then
+	game.Workspace.byebyebyebye.Color3.new(1,0,0)
+end
+local y,x,z = 0,math.random(-10,10),math.random(-10,10)
+print(x)
+local y,x,z = math.random(-5,5),math.random(-5,5),math.random(-5,5)
+local hithere = game.Workspace["day05"].hw.hithere
+if game.Workspace.hithere.Position == Vector3.new(-69.796, 1.5, -185.854) then
+	print("შიგნით")
+end
+local r,g,b = math.random(1,255),math.random(1,255),math.random(1,255)
+game.Workspace.three.Color3.fromRGB(r,g,b)
+game.Workspace.two.Color3.fromRGB(r,g,b)
+game.Workspace.one.Color3.fromRGB(r,g,b)
+game.Workspace.itsapart.Position.X = Vector3.new(
+	math.random(0,360)
+)
+local asrr = game.Workspace["day05"].hw.asrrr
+game.Workspace.asrrr.Color3.fromRGB(
+	math.random(-100,255,-100,255,-100,255)
+)
+if game.Workspace.asrrr.Color3 < 1.5 then
+	print("ეს მუქი ფერი არის :)")
+end
+if game.Workspace.asrrr.Color3 > 1.5 then
+	print("ეს ღია ფერი არის :)")
+end
+local hiiiii = game.Workspace["day05"].hw.hiiiii
+game.Workspace.hiiiii.Size = Vector3.new(
+	math.random(0,255),math.random(0,255),math.random(0,255)
+)

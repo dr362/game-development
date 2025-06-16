@@ -1,0 +1,7 @@
+local inst = Instance.new("Part")
+inst.Touched:Connect(function(hit)
+	if hit.Parent:FindFirstChild("Humanoid") then
+		local player = game.Players:GetPlayerFromCharacter(hit.Parent)
+		print(player)
+	end
+end)

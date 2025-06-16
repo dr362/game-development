@@ -1,0 +1,39 @@
+--შექმენით ცვლადი playerHealth რომელიც თავდაპირველად იქნება 100, შემდეგ შექმენით ფუნქცია სახელად damagePlayer რომელიც player-ის health (სიცოცხლეს) გამოაკლებს 20-ს და დაბეჭდავთ მის ამჟამინდელ health-ს დამატებით თუ playerHealth გახდა ნულის ტოლი ფუნქცია მხოლოდ უნდა ბეჭდავდეს რომ მოთამშე დაიღუპა. საბოლოოდ გამოიძახეთ ეს ფუნქცია 5-ჯერ და თქვენი სიტყვებით დაწერეთ რისთვის გჭვირდება 
+local playerHealth = 100
+function damagePlayer()
+	if playerHealth ~= 0 then
+		playerHealth -= 20
+		print("player got damaged and his current hp is" .. " " .. playerHealth)
+	end
+	if playerHealth <= 0 then
+		print("player has died X_X")
+	end
+end
+damagePlayer()
+--შექმენით ფუნქცია რომელიც მიიღებს მოთამაშის სახელს და დაბეჭდავს შემდეგ ტექსტს: "Hello welcome to game, (მოთამაშის სახელი) გამოიძახეთ ეს ფუნქცია მინიმუმ  3-ჯერ და გადაეცით სხვადასხვა სახელები
+function greetp(name)
+	print("Hello welcome to game, " .. name)
+end
+greetp("joseph")
+greetp("jack")
+greetp("ia")
+--შექმენით ფუნქცია addNumbers რომელსაც გადაეცემა 2 პარამეტრი: a, b. ფუნქცია აბრუნებს (და არა ბეჭდავს) ამ 2 პარამეტრის ჯამს. შემდეგ გამოიძახეთ ეს ფუნქცია 3-ჯერ და შეიანხეთ ცვლადში თითოეული გამოძახების შედეგეგი. საბოლოოდ ცალ-ცალკე დაბეჭდეთ სამივე ცვლადი
+function addNumbers(a,b)
+	return a + b
+end
+local something = addNumbers()
+print(something)
+print(something)
+print(something)
+print(something)
+print(something)
+
+function idk()
+	while true do
+		if game.Lighting.ClockTime == 24 then
+			game.Lighting.ClockTime = 0
+		end
+		game.Lighting.ClockTime += 0.1
+		wait(0.1)
+	end
+end

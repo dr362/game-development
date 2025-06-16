@@ -1,0 +1,57 @@
+--1)შექმენი მოდელი სახელად MyModel და დაამატე მასში რამდენიმე ნაწილაკი Part. დაწერე სკრიპტი, რომელიც მოიძიებს ამ მოდელის ყველა შვილობილ ობიექტს GetChildren მეთოდით და დაბეჭდავს თითოეულის სახელს Output ფანჯარაში
+local supchik = game.Workspace:GetChildren("Mymodel")
+print(supchik)
+--2) შექმენი მოდელი, რომლის შვილობილი ობიექტები არიან სხვადასხვა Part-ები. დაწერე სკრიპტი, რომელიც GetChildren მეთოდით მოიძიებს ამ ობიექტებს და ყველას შეუცვლის ფერს თეთრზე
+local supchikahhmodel = game.Workspace:GetChildren("sup model")
+if supchikahhmodel then
+	for i, v in pairs(supchikahhmodel) do
+		v.BrickColor = BrickColor.new("White")
+	end
+end
+--3) შექმენი მოდელი და დაწერე სკრიპტი, რომელიც გამოიყენებს GetChildren მეთოდს, დაითვლის შვილობილი ობიექტების რაოდენობას და დაბეჭდავს ამ რაოდენობას Output-ში
+local supchikaaaahhhmodel = game.Workspace:GetChildren("kitri")
+for i in supchikaaaahhhmodel do
+	i = 0
+	i += 1
+end
+--4) შექმნილია მოდელი სახელად ToHide, რომელიც შეიცავს ნაწილაკებს. დაწერე სკრიპტი, რომელიც ყველა შვილობილ ობიექტს მიუნიჭებს Transparency = 1 და CanCollide = false, რათა ისინი დაიმალონ და არ იყვნენ ფიზიკურად ხელშესახები
+for i, v in pairs(game.Workspace.ToHide:GetChildren()) do
+	v.Transparency = 1
+	v.CanCollide = false
+end
+--5) შექმენი ნაწილაკი Part და დაამატე მას Touched ივენტ. როდესაც მოთამაშე შეეხება მას, გამოიყენე game.Players\:GetPlayerFromCharacter(hit.Parent) მეთოდი, რათა მოიპოვო მოთამაშის სახელი და დაბეჭდო Output-ში
+local prt = game.Workspace.day13.hw.Part
+prt.Touched:Connect(function(hit)
+	game.Players:GetPlayerFromCharacter(hit.Parent)
+end)
+--6) დაწერე სკრიპტი, რომელიც ნაწილაკზე შეხებისას შეამოწმებს, ნამდვილად მოთამაშეა თუ არა შეხების წყარო GetPlayerFromCharacter მეთოდით და მხოლოდ ამ შემთხვევაში დაბეჭდავს ტექსტს Player touched the part
+local supchikinio = game.Workspace.day13.hw.Partt
+supchikinio.Touched:Connect(function(hit)
+	local supi = game.Players:GetPlayerFromCharacter(hit.Parent)
+	if supi then
+		print("Player touched the part!!!")
+	end
+end)
+--7) შექმნილია Part, რომელიც მოთამაშის შეხებისას დააკლებს მის ჯანმრთელობას 20 ქულით. სკრიპტში გამოიყენე GetPlayerFromCharacter მეთოდი, რათა გაიგო, ნამდვილად მოთამაშეა თუ არა და თუ კი, მოძებნე Humanoid და შეამცირე სიცოცხლე
+local supchikik = game.Workspace.day13.hw.supi
+supchikik.Touched:Connect(function(hit)
+	if hit.Parent:FindFirstChild("Humanoid") then
+		hit.Parent.Humanoid.Health -= 20
+	end
+end)
+--8) დაწერე სკრიპტი, რომელიც თამაშში მოთამაშის შეხებისას გამოიყენებს GetPlayerFromCharacter მეთოდს და გამოაქვეყნებს Chat-ში შეტყობინებას You have touched the secret block მოთამაშის სახელთან ერთად
+local supichikchik = game.Workspace.day13.hw.supinin
+supichikchik.Touched:Connect(function(hit)
+	local supimowyenilia = game.Players:GetPlayerFromCharacter(hit.Parent)
+	if supimowyenilia then
+		print(supimowyenilia)
+	end
+end)
+--9) დაწერე სკრიპტი, რომელიც ნაწილაკთან შეხებისას შეამოწმებს, მოთამაშის პერსონაჟია თუ არა და მხოლოდ ასეთ შემთხვევაში განახორციელებს კოდის დანარჩენ მოქმედებებს, ხოლო სხვა ობიექტებზე რეაგირება არ ექნება
+local supinini_bananini = game.Workspace.day13.hw.Partinini
+supinini_bananini.Touched:Connect(function(hit)
+	local supimelausupesia = game.Players:GetPlayerFromCharacter(hit.Parent)
+	if supimelausupesia then
+		supinini_bananini.Color = Color3.fromRGB(255, 0, 0)
+	end
+end)

@@ -1,0 +1,57 @@
+--while ციკლი – ნათურა, რომელიც მბრწყინავს სანამ ჩართულია შექმენი პატარა Script, სადაც `Part` იქნება ნათურა და როდესაც თამაში დაიწყება, ნათურა დაიწყებს ციმციმს – მისი ფერი იცვლება ყვითელსა და თეთრს შორის ყოველ ნახევარ წამში. ეს ცვალებადობა გაგრძელდეს სანამ ცვლადი isOn არის true
+local isOn = game.Workspace["day07"].hw.light
+while true do
+	wait(0.3)
+	isOn.BrickColor = BrickColor.new("Black")
+	wait(0.3)
+	isOn.BrickColor = BrickColor.new("White")
+end
+while true do
+	wait(0.5)
+	isOn.BrickColor = BrickColor.new("Cool yellow")
+	wait(0.5)
+	isOn.BrickColor = BrickColor.new("White")
+end
+--repeat ციკლი – ყუთები, რომლებიც იქმნება სანამ ადგილი არ დაიკავეს დაწერე სკრიპტი, რომელიც ქმნის ყუთებს (Part) შემთხვევით ფერით, და აწყობს მათ იატაკზე, მაგრამ ციკლი გაჩერდება, როცა სულ 5 ყუთი უკვე შეიქმნა. გამოიყენე repeat ციკლი და ხელით დათვალე რამდენი ყუთია
+repeat
+	local box = Instance.new("Part", game.Workspace.Box)
+until box == 5
+--for ციკლი – კიბის შექმნა ბლოკებით დაწერე სკრიპტი, რომელიც for ციკლის გამოყენებით ქმნის 10 ბლოკს ისე, რომ თითო ბლოკი წინაზე ცოტათი მაღლა და მარცხნივ იდგეს. ასე შეიქმნება პატარა კიბე, რომელზეც პერსონაჟი შეძლებს ასვლას
+for i = 0, 10 do
+	Instance.new("Part", game.Workspace.Furry.PositionY == Vector3.new(1), game.Workspace.Furry.Position.Z == Vector3.new(0.5))
+end
+--for ციკლი – შექმენი 10 ბლოკი ერთმანეთის გვერდით დაწერე სკრიპტი, სადაც for ციკლი 10-ჯერ ტრიალებს და ყოველ ჯერზე ქმნის ახალ Part-ს, რომელიც თითო წერტილით მარჯვნივ იდგება წინა ბლოკისგან. ასე მივიღებთ მწკრივად განლაგებულ ბლოკებს
+for i = 0, 10 do
+	Instance.new("Part", game.Workspace.FURRY.Position.X == Vector3.new(1))
+end
+--for ციკლი – რიცხვების გამოტანა Output-ში 20-იდან 40-მდე გამოიყენე for ციკლი, რომ print() ფუნქციით გამოიტანო ყველა რიცხვი 20-იდან 40-მდე Output ფანჯარაში
+for i = 20, 40 do
+	i += 1
+end
+--for ციკლი – ლუწი რიცხვები 30-იდან 100-მდე დაწერე for ციკლი, რომელიც 30-დან 100-მდე ყოველ ლუწ რიცხვს (ანუ 2-ით გაზრდით) გამოიტანს Output-ში.
+for i = 30, 100 do
+	i += 2
+end
+--for ციკლი – რიცხვების პირქით გამოტანა 50-დან 30-მდე დაწერე `for` ციკლი, რომელიც 50-დან 30-მდე დააბეჭდავს რიცხვებს პირქით (ანუ უკან, -1-ით), მაგალითად: 50, 49, 48 ... 30
+for i = 50, 30, -1 do
+end
+--repeat ციკლი – ბლოკების შექმნა სანამ y პოზიცია < 30 დაწერე სკრიპტი, რომელიც repeat ციკლით ქმნის ბლოკებს ზემოთ ერთმანეთზე, და იმეორებს მანამ, სანამ ბოლო ბლოკის Position.Y პატარაა 30-ზე
+repeat
+	local unfurr = Instance.new("Part", game.Workspace.unfurr.Position.Y == Vector3.new(math.random(0,31)))
+until unfurr.Position.Y == 30
+--repeat ციკლი – შემთხვევითი ბლოკების შექმნა სანამ შეიქმნება წითელი ბლოკი დაწერე repeat ციკლი, რომელიც ქმნის შემთხვევითი ფერის ბლოკებს და აგრძელებს მანამ, სანამ რომელიმე ბლოკი არ შეიქმნება წითელი ფერის (შეამოწმე თუ Color == Color3.fromRGB(255, 0, 0))
+repeat
+	local part = Instance.new("Part")
+	part.Size = Vector3.new(5, 5, 5) 
+	part.Anchored = true
+	part.Position = Vector3.new(math.random(-50, 50), 5, math.random(-50, 50))
+
+	local r, g, b = math.random(0, 255), math.random(0, 255), math.random(0, 255)
+	part.Color = Color3.fromRGB(r, g, b)
+
+	part.Parent = workspace
+
+	if part.Color == Color3.fromRGB(255, 0, 0) then
+		redBlockCreated = true
+	end
+until redBlockCreated

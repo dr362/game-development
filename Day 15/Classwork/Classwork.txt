@@ -1,0 +1,22 @@
+local collectionservice = game:GetService("CollectionService")
+local killBricks = collectionservice:GetTagged("killBrick")
+for index,Brick in pairs(killBricks) do
+	Brick.Touched:Connect(function(hit)
+		if hit.Parent:FindFirstChild("Humanoid") then
+			hit.Parent.Humanoid.Health = 0
+		end
+	end)
+end
+
+sorry i couldn't find this N of cw so this is the same thing but different text
+
+
+
+local deleted = game.CollectionService:GetInstanceRemovedSignal("killBricks")
+for index,brick in pairs(killBricks) do
+	deleted:Connect(function(brick)
+		if brick:Destroy() then
+			print("KILLBRICK HAS BEEN DESTROYED")
+		end
+	end)
+end

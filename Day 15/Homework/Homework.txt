@@ -1,0 +1,55 @@
+local deleted = game.CollectionService:GetInstanceRemovedSignal("killBricks")
+for index,brick in pairs(killBricks) do
+	deleted:Connect(function(brick)
+		if brick:Destroy() then
+			print("KILLBRICK HAS BEEN DESTROYED")
+		end
+	end)
+end
+
+
+
+
+local notkillbrick = game.Workspace.day15.cw.notkillbrick
+local CollectionService = game:GetService("CollectionService")
+task.wait(5)
+notkillbrick.CollectionService:AddTag("killBrick")
+
+
+
+
+local Collectionservice = game:GetService("CollectionService")
+local Heal_Zone = Collectionservice:GetTagged("healzone")
+for index,Brick in pairs(Heal_Zone) do
+	Brick.Touched:Connect(function(hit)
+		if hit.Parent:FindFirstChild("Humanoid") then
+			wait(1)
+			hit.Parent.Humanoid.Health += 20
+		end
+	end)
+end
+
+
+
+local Collectionservice = game:GetService("CollectionService")
+local Heal_Zone = Collectionservice:GetTagged("healzone")
+for index,Brick in pairs(Heal_Zone) do
+	Brick.Touched:Connect(function(hit)
+		if hit.Parent:FindFirstChild("Humanoid") then
+			wait(1)
+			hit.Parent.Humanoid.Health += 20
+		end
+	end)
+end
+
+
+
+
+local COllectionservice = game:GetService("CollectionService")
+local Danger_Zone = COllectionservice:GetTagged("dangerZone")
+for Index,Brick in pairs(Danger_Zone) do
+	Brick.Transparency = 0.5
+	Brick.Color = Color3.fromRGB(255, 69, 72)
+end
+
+

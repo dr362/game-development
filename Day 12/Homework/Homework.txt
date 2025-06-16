@@ -1,0 +1,55 @@
+--1)
+game.Players.PlayerAdded:Connect(function(NewPlayer)
+	print(NewPlayer)
+end)
+--2)
+game.Players.PlayerAdded:Connect(function(NewPlayer)
+	print("Heloooooo" .. " " .. NewPlayer .. " " .. ":D")
+end)
+--we dont greet anyone in the 1-st one but we do greet in the 2-nd
+--3)
+game.Players.PlayerAdded:Connect(function(NewP)
+	local leaderstats = Instance.new("Folder", NewP)
+	leaderstats.Name = "leaderstats"
+	local killerchance = Instance.new("IntValue", leaderstats)
+	killerchance.Name = "KillerChance"
+	killerchance.Value = 10
+	local cash = Instance.new("IntValue",leaderstats)
+	cash.Name = "Cash"
+	cash.Value = 360
+end)
+
+
+
+--1) შექმენით leaderstats, რომელშიც მოთამაშეს ექნება "ქულები" (Points) 0-დან დაწყებული
+--4)დაწერეთ სკრიპტი, რომელიც ყოველი 10 წამში მოთამაშის ქულებს (Points) 1-ით შეამატებს
+game.Players.PlayerAdded:Connect(function(NewP)
+	local leaderstats = Instance.new("Folder", NewP)
+	leaderstats.Name = "leaderstats"
+	local killerchance = Instance.new("IntValue", leaderstats)
+	killerchance.Name = "Points"
+	killerchance.Value = 0
+	while true do
+		wait(10)
+		killerchance.Value += 1
+	end
+end)
+--6) დაამატეთ "ლეველი" (Level) leaderstats-ში, რომელიც ყველა მოთამაშეს 1-ით აქვს დასაწყისში
+game.Players.PlayerAdded:Connect(function(NEWP)
+	local leaderstatsss = Instance.new("Folder", NEWP)
+	leaderstatsss.Name = "leaderstats"
+	local level = Instance.new("IntValue", leaderstatsss)
+	level.Name = "Level"
+	level.Value = 1
+end)
+
+
+
+--3)შექმენით "მონეტების" (Coins) სტატისტიკა, რომელიც ყველა მოთამაშეს 10-ით ექნება დასაწყისში
+game.Players.PlayerAdded:Connect(function(NewP)
+	local leaderstats = Instance.new("Folder", NewP)
+	leaderstats.Name = "leaderstats"
+local COIN = Instance.new("IntValue", leaderstats)
+	COIN.Name = "Coins"
+	COIN.Value = 10
+end)

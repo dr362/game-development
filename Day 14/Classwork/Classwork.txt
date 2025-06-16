@@ -1,0 +1,25 @@
+leaderstats code |
+                 |
+game.Players.PlayerAdded:Connect(function(NewP)
+	local leaderstats = Instance.new("Folder", NewP)
+	leaderstats.Name = "leaderstats"
+	local Coins = Instance.new("IntValue", leaderstats)
+	Coins.Name = "Coins"
+	Coins.Value += 1
+end)
+		  |
+leaderstatss code |
+coin part code |
+               |
+local hi = script.Parent
+hi.Touched:Connect(function(hit)
+	if hit.Parent:FindFirstChild("Humanoid") then
+		local player = game.Players:GetPlayerFromCharacter(hit.Parent)
+		if player then
+			player.leaderstats.Coins.Value = player.leaderstats.Coins.Value + 1
+			hi:Destroy() 
+		end
+	end
+end)
+	       |
+coin part code |

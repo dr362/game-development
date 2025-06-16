@@ -1,0 +1,74 @@
+--შექმენი სკრიპტი, რომელიც ყოველ წამში თანდათან ზრდის ნაწილს 'Part' ზომაში 'Vector3' გამოყენებით. გამოიყენე while true do ციკლი და wait(1)
+local sirr = game.Workspace["day06"].hw.sir
+while true do
+	sirr.Size = Vector3.new(
+		math.random(0,1000))
+	wait(1)
+end
+--გადააცურე ნაწილი შემთხვევით მდებარეობაზე სივრცეში. გამოიყენე math.random() რათა დააყენო ახალი პოზიცია 'Position' თვისებაში Vector3.new(...)
+local bruuuhhh = game.Workspace["day06"].hw.bruh
+bruuuhhh.Position = Vector3.new(
+	math.random(0,255))
+--შეცვალე ნაწილის ფერი შემთხვევითად ყოველ 2 წამში. გამოიყენე `Color3.fromRGB` და `math.random(0, 255)` წითელი, მწვანე და ლურჯი კომპონენტებისთვის
+local sari = game.Workspace["day06"].hw.sari
+while true do
+sari.Color = Color3.fromRGB(
+	math.random(0,255),
+	math.random(0,255),
+	math.random(0,255))
+	wait(2)
+end
+--თუ ნაწილი დიდია (მაგ. 'Size.X > 10'), მაშინ შეამცირე მისი ზომა. გამოიყენე 'if' პირობა ზომის შესამოწმებლად
+local sarii = game.Workspace["day06"].hw.sarii
+if sarii.Size.X > 10 then
+	sarii.Size = Vector3.new(
+		math.random(0,255),
+		math.random(0,255),
+		math.random(0,255))
+end
+--შექმენი table სადაც იქნება სამი 'Vector3' პოზიცია და გადაადგილე ნაწილი ერთ-ერთ მათგანზე შემთხვევით
+local furry = game.Workspace["day06"].hw.fur
+local vctr = {Vector3.new(math.random(0,255)),Vector3.new(math.random(0,255)),Vector3.new(math.random(0,255))}
+game.Workspace.furry.Position = vctr
+--გამოიყენე 'while' ციკლი ნაწილისთვის, რომელიც ყოველ 0.5 წამში გადაადგილდება მარცხნიდან მარჯვნივ და უკან, შექმენი "მოძრავი პლატფორმა"
+local sariii = game.Workspace["day06"].hw.sariii
+while true do
+	wait(0.5)
+	sariii.Size.X = Vector3.new(
+		math.random(0,255))
+end
+while true do
+	wait(0.5)
+	sariii.Size.Y = Vector3.new(
+		math.random(0,255))
+end
+while true do
+	wait(0.5)
+	sariii.Size.Z = Vector3.new(
+		math.random(0,255))
+end
+--დაწერე სკრიპტი, რომელიც ამოწმებს, თუ ნაწილი ძალიან მაღლაა (Position.Y > 50), და დააბრუნებს მას საწყის პოზიციაზე
+local sariiii = game.Workspace["day06"].hw.sariiii
+if sariiii.Position.Y > 50 then
+	sariiii.Position.Y = 1
+end
+--დაწერე სკრიპტი, რომელიც ამოწმებს შემთხვევით რიცხვს და თუ ის 5-ზე მეტია, ნაწილს აძლევს მწვანე ფერს, ხოლო თუ ნაკლებია — ლურჯს
+local numbero = game.Workspace["day06"].hw.nuberios
+numberios = math.random(0,10)
+if numbero > 5 then
+	numbero.BrickColor = BrickColor.new("Lime green")
+end
+if numbero < 5 then
+	numbero.Brickcolor = BrickColor.new("Really blue")
+end
+--შექმენი `table` სხვადასხვა Color3 მნიშვნელობებით და ამოირჩიე შემთხვევით ერთი, რათა დააყენო ნაწილის ფერად
+local tables = {Color3.fromRGB(255, 0, 0), Color3.fromRGB(0, 255, 0), Color3.fromRGB(0, 0, 255)}
+local bruj = game.Workspace["day06"].hw.bruj
+bruj.Color = tables
+--გააკეთე სისტემა, სადაც ნაწილი იმალება (Transparency = 1) თუ მისი პოზიცია ზედმეტად დაბალია (Position.Y < 3), და ჩნდება ისევ როცა პოზიცია მოიმატებს
+local sistem = game.Workspace["day06"].hw.SISTEM
+sistem.Transparency = 1
+if sistem.Position.Y < 3 then
+	sistem.Transparency = 0
+end
+local tabelllsss = {"game",15,true,nil,"Workspace",14,false,nil,"Part",13,true,nil,"Position",12,false}

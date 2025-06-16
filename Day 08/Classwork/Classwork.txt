@@ -1,0 +1,32 @@
+--1) შექმენით ბოსტენულის მასივი, რომელშიც შეინახავთ 5 ელემენტს, ამ მასივიდან table.remove-ის საშვალებით წაშალეთ 1 ელემენტი, table.insert-ის საშვალებით ჩაამატეთ 1 ელემენტი და იპოვეთ თქვენთვის ყველაზე საყვარელი ელემენტის პოზიცია table.find-ის საშვალებით. შემდეგ კი for ციკლის და # ოპერატორის საშვალებით გადაურეთ 1-იდან სიის ყველა ელემენტის პოზიციის ჩათვლით ინდექსებს და დაბეჭდეთ სიის ყველა ელემენტი ინდექსთან ერთად
+local vegies = {"tomato","potato","beans","pickles","cucumber"}
+table.remove(vegies,3)
+table.insert(vegies,"corn")
+table.find(vegies,5)
+for i = 1,#vegies do
+	print(i .. ":" .. vegies[i])
+end
+--```2) წინაზე შექმნილ მასივს გადაურეთ for ციკლის საშვალებით, მაგრამ გამოიყენთ pairs მეთოდი რომ წყვილებად გადაუაროთ თითოეულ ელემენტის ინდექსსა და მნიშვნელობას, თითოეული დაბეჭდეთ ერთ ხაზზე. შემდეგ იგივე გააკეთოთ ოღონდ pair-ის ნაცვლად გამოიყენეთ ipairs და დაწერეტ კომენტარებით რა განსხვავებაა ამ ორს შორის```
+for index, item in pairs(vegies)do
+	print(index,item)
+end
+for index, item in ipairs(vegies)do
+	print(index,item)
+end
+--ipairs - სწორად ალაგებს
+--pairs - არეულად ბეჭდავს
+--3) შექმენით table რომელიც იქნება dictionary შეინახეთ 5 მონსტრის მნიშვნლობები, ახსენით როგორ ტიპის ცხრილია ეს. საბოლოოდ dictionary-ის გადაურეთ for ციკლით ჯერ გამოიყენეთ pairs და დაბეჭდეთ ყველა მნიშვნელობა შემდეგ კი გააკეთეთ იგივე ipairs-ის გამოყენებით
+local monsters = {
+	["zombie"] = {100, 5, "can heal when eats a person"},
+	["wolf"] = {150, 10, "can be tamed by feeding it zombie"},
+	["vampire"] = {200, 30, "can teleport and stab you with its dagger"},
+	["werewolf"] = {500, 50, "stronger at night"},
+	["robbot"] = {1000, 70, "the strongest of all"}
+}
+--დიქშენერს ყავს წყვილები მისი მნიშვნელობებია-key, item შეგიძლია სია შექმნა რაღაც რაღაცეების
+for key, value in pairs(monsters) do
+	print(key,value)
+end
+for key, value in ipairs(monsters) do
+	print(key,value)
+end

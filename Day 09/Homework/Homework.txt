@@ -1,0 +1,59 @@
+--დაწერე ფუნქცია, რომელიც იღებს table-ს რიცხვებით და აბრუნებს მათ ჯამს
+function table_sum(table1)
+	local something = 0
+	for index,value in table1 do
+		something += value
+	end
+	return something
+end
+--დაწერე ფუნქცია, რომელიც იღებს ორ რიცხვს და აბრუნებს მათ შორის უმეტესს
+function num2(num1,num2)
+	if num1 > num2 then
+		return num1
+	elseif num2 > num1 then
+		return num2
+	end
+end
+--დაწერე ფუნქცია, რომელიც იღებს table-ს ფერებით (Color3) და აბრუნებს ახალ table-ს, სადაც ყველა ფერი შეიცვლება თეთრ ფერად (Color3.new(1,1,1))
+function table_color(turntowhite1,turntowhite2,turntowhite3)
+	local color = Color3.new(turntowhite1,turntowhite2,turntowhite3)
+	if color ~= Color3.new(1,1,1) then
+		color = Color3.new(1,1,1)
+	end
+end
+--დაწერე ფუნქცია, რომელიც არ იღებს არაფერს, უბრალოდ Output-ში ბეჭდავს "Hello, World!"
+function hello_world()
+	print("Hello, World!")
+end
+--დაწერე ფუნქცია, რომელსაც არგუმენტები არ აქვს და აბრუნებს შემთხვევით რიცხვს 1-დან 100-მდე
+function random()
+	local random = math.random(1,100)
+	return random
+end
+--დაწერე ფუნქცია, რომელიც იღებს Vector3-ს და აბრუნებს ახალ Vector3-ს, სადაც y ღერძი გაიზრდება 10-ით
+function vectorr(givenvector)
+	return givenvector + Vector3.new(0, 10, 0)
+end
+--დაწერე ფუნქცია, რომელიც იღებს table-ს რიცხვებით და თითოეულს 5-ს უმატებს (ცვლილება ხდება პირდაპირ table-ში)
+function tableee(a,b,c,d,e)
+	local tableeee = {a,b,c,d,e}
+	tableeee += 5
+end
+--დაწერე ფუნქცია, რომელიც ქმნის ახალ Part-ს და უყენებს შემთხვევით ფერს და ზომას
+function VECTORR()
+	local VECTRR = Instance.new("Part")
+	VECTRR.Color = Vector3.new(math.random(0,255),math.random(0,255),math.random(0,255))
+	VECTRR.Size = Vector3.new(math.random(0,100),math.random(0,100),math.random(0,100))
+	return VECTRR
+end
+--დაწერე ფუნქცია, რომელიც იღებს Player-ის dictionary-ს (მაგ: {Alex=5, Bella=8}), თითო მოთამაშეს +1 ქულას უმატებს და აბრუნებს განახლებულ dictionary-ს
+function dict(donttellme)
+	local icantellyouwhattodo = {
+		["Deme"] = 0,
+		["Gio"] = 10,
+		["Alexandre"] = 5
+	}
+	for key, value in pairs(donttellme) do
+		icantellyouwhattodo[key] += 1
+	end
+end

@@ -1,0 +1,38 @@
+--[[2) თქვენი სიტყვებით ახსენით რა არის ვექტორი, რისთვის ვიყენებთ რა თვისებები ახასიათებს
+3) random-ით შექმენით 3 ცვლადი, x,y,z 1-იდან 30-მდე. შემდეგ ამ კორდინაებით ჩაწერილი ვექტორით part-ს მიანიჭეთ ზომა შემდეგ შეამ
+ოწმეთ x თუ მეტია 10-ზე 20-ზე და 25-ზე, შესაბამისად დაბეჭდეთ ყველა შემთხვევაში შედეგი]]
+-- ვექტორი არის ისეთი რამ რომელიც გეხმარება ობიექტების გადაადგილებაში
+local bye = game.Workspace["day05"].classwork.bye
+bye.Position = Vector3.new(
+	math.random(10,100),
+	math.random(1,10),
+	math.random(100,1000),
+	math.random(1000,10000),
+	math.random(10000,10000)
+)
+bye.Size = Vector3.new(
+	math.random(10,100),
+	math.random(1,10),
+	math.random(100,1000),
+	math.random(1000,10000),
+	math.random(10000,10000)
+)
+bye.Rotation = Vector3.new(
+	math.random(10,100),
+	math.random(1,10),
+	math.random(100,1000),
+	math.random(1000,10000),
+	math.random(10000,10000))
+bye.Andchored = true
+local x= math.random(0,30)
+local z = math.random(0,30)
+local y = math.random(0,30)
+if x > 25 then
+	print("x is greater than 25")
+end
+if x > 20 then
+	print("x is greater than 20")
+end
+if x > 10 then
+	print("x is greater than 10")
+end

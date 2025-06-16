@@ -1,0 +1,64 @@
+--შექმენი table, სადაც შეინახავ 5 შემთხვევით ფერს Color3.fromRGB-ით და for ციკლით გამოიტანე ისინი Output-ში
+local tableee = {}
+local r, g, b = math.random(1,255), math.random(1,255), math.random(1,255)
+table.Insert(tableee,r,g,b)
+for i = 5,#tableee do
+	print(tableee)
+end
+--შექმენი ცხრილი რიცხვებით {1, 2, 3, 4, 5}, შემდეგ insert მეთოდით დაამატე 6 ბოლოს და ყველა ელემენტი for ციკლით გამოიტანე
+local tableeee = {1, 2, 3, 4, 5}
+table.insert(tableeee,6)
+for i = 1,#tableeee do
+	print(tableeee)
+end
+--შექმენი table {“apple”, “banana”, “grape”, “orange”}, წაშალე “grape” და დარჩენილი ელემენტები გამოიტანე ციკლით
+local tableeeee = {"apple","banana","grape","orange"}
+table.remove(tableeeee,3)
+for i = 1,#tableeeee do
+	print(tableeeee)
+end
+--შექმენი table რიცხვებით და მოძებნე არის თუ არა 7 ცხრილში, დააბეჭდე "ნაპოვნია" ან "არ არის"
+local tableeeeee = {1,2,3,4,5,6,8,9,10}
+table.find(tableeeeee,7)
+if tableeeeee ~= 7 then
+	print("არ არის")
+end
+if tableeeeee == 7 then
+	print("ნაპოვნია")
+end
+--შექმენი table {10, 20, 30, 40} და დაამატე 25 მესამე პოზიციაზე insert-ის გარეშე, გადააადგილე ელემენტები ხელით
+local tableeeeeee = {10,20,30,40}
+tableeeeeee += tableeeeeee.index(3) == 25
+for index, item in pairs(tableeeeeee)do
+	print(index,item)
+end
+--შექმენი dictionary Scores = {Alex = 5, Bella = 8, Chris = 3} და pairs ციკლით გამოიტანე ყველა მოთამაშე და მათი ქულა
+local Scores = {
+	["Alex"] = 5,
+	["Bella"] = 8,
+	["Chris"] = 3
+}
+for key, value in ipairs(Scores) do
+	print(key,value)
+end
+--იმავე dictionary-ში Chris-ს დაუმატე 2 ქულა და გამოიტანე განახლებული ქულები
+Scores += "Chris" + 2
+--შექმენი table, სადაც შეინახავ 5 შემთხვევით შექმნილ Vector3 პოზიციას და ყველა პოზიცია for ციკლით გამოიტანე
+local tableeeeeeee = {Vector3.new(math.random(0,255),(math.random(0,255),(math.random(0,255)),Vector3.new(math.random(0,255),(math.random(0,2
+	55),(math.random(0,255)),Vector3.new(math.random(0,255),(math.random(0,255),(math.random(0,255)),Vector3.new(math.random(0,255),(math.random(0,255)
+		,(math.random(0,255)),Vector3.new(math.random(0,255),(math.random(0,255),(math.random(0,255))}
+for i = 1,#tableeeeeee do
+	print(tableeeeeee)
+end
+--for ციკლით შექმენი 10 ბლოკი შემთხვევითი ფერით და თუ რომელიმე Color3.fromRGB(0,255,0) არის, მისი სახელი დაბეჭდე Output-ში
+for i = 1,10 do
+	local inst = Instance.new("Part")
+	inst.Color = Vector3.new(math.random(1,255),math.random(1,255),math.random(1,255))
+	if inst.Color == Color3.fromRGB(0,255,0) then
+		inst += Instance.new("Part", game.Workspace.sup)
+	end
+end
+--შექმენი table {1, 4, 7, 10, 13, 16}, წაშალე ყველა ლუწი რიცხვი და დარჩენილი ელემენტები დაბეჭდე
+local tableeeeeeeee = {1,4,7,10,13,16}
+table.remove(tableeeeeeeee,2,4,6)
+print(tableeeeeeeee)

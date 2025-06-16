@@ -1,0 +1,24 @@
+local BESAFE = game.Workspace.day14.hw.SafeZone
+BESAFE.Touched:Connect(function(hit)
+	local player = game.Players:GetPlayerFromCharacter(hit.Parent)
+	if player then
+		print("Player is safe: " .. player.Name)
+	end
+end)
+
+
+
+
+game.Workspace.day14.hw.okidokikavazaki.Touched:Connect(function(hit)
+	local getout = game.Players:GetPlayerFromCharacter(hit.Parent)
+	game.Players.PlayerAdded:Connect(function(NewP)
+		local leaderstats = Instance.new("Folder", NewP)
+		leaderstats.Name = "leaderstats"
+		local score = Instance.new("IntValue",leaderstats)
+		score.Name = "Score"
+		score.Value = 0
+		if getout then
+		score.Value += 50
+		end
+	end)
+end)

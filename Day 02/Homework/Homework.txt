@@ -1,0 +1,36 @@
+--[[2) შექმენით 10 string ტიპის და 10 რიცხვითი ცვლადი, შეასრულეთ მათ შორის 5 კონკატინაციისა და 5 შეკრების მაგალითი, განიხილეთ ყველა შემთხვევა და აღწერეთ კომენტარე]]
+local num = 1
+local num2 = 2
+local num3 = 3
+local num4 = 4
+local num5 = 5
+local num6 = 6
+local num7 = 7
+local num8 = 8
+local num9 = 9
+local num10 = 10
+local num11 = "1"
+local num12 = "2"
+local num13 = "3"
+local num14 = "4"
+local num15 = "5"
+local num16 = "6"
+local num17 = "7"
+local num18 = "8"
+local num19 = "9"
+local num20 = "10"
+print(num + num2)
+print(num5 + num4)
+print(num3 * num)
+print(num4 / num2)
+print(num5 % num)
+print("i am".. num10.. "years old")
+print("you are".. num9.. "years old")
+print("he is".. num5.. "years old")
+print("she is".. num7.. "years old")
+print("it is".. num3.. "years old")
+print(num17 + num15)
+print(num20 - num19)
+print(num15 * num11)
+print(num18 % num13)
+print(num12 / num16)

@@ -1,0 +1,42 @@
+--[[1) part-ში შექმენით script და ეს part შეინახეთ script-ის ცვლადში, შემდეგ გამოიყენეთ while ციკლი და part ობიექტის ფერები
+შეცვალეთ შემთხვევითად ყოველ 1 წამში (გამოიყენეთ wait მეთოდი)]]
+local GASP = game.Workspace["day06"].cw.wow
+local red,green,blue = math.random(0,255),math.random(0,255),math.random(0,255)
+local redOFF = false
+local BlueOFF = true
+while true do
+	if not redOFF then
+		red += 10
+	end
+	if red == 255 then
+		redOFF = true
+	end
+	if not BlueOFF then
+		blue += 10
+	end
+	if blue == 255 then
+		BlueOFF = true
+	end
+	wait(1)
+	GASP.Color = Color3.fromRGB(red,green,blue)
+end
+local suuup = 0
+while suuup < 20 do
+	suuup += 1
+	print(suuup)
+end
+--[[4) შექმენით პროექტი: შექნებით part რომელშიც დაამატებთ script-ს, script-ით ყოველ 1 წამში უნდა შეცვალოთ part-ის პოზიცია,
+ზომა, ფერი, transparency, შემთხვევითად random-ის გამოყენებით]]
+local Wow = game.Workspace["day06"].cw.WOW
+local red,green,blue = math.random(0,255),math.random(0,255),math.random(0,255)
+while true do
+	wait(1)
+	Wow.Position = Vector3.new(0,50,0,50,0,50)
+	Wow.Size = Vector3.new(0,50,0,50,0,50)
+	Wow.Color3.fromRGB(
+		Vector3.new(red,green,blue),
+		Vector3.new(red,green,blue),
+		Vector3.new(red,green,blue)
+	)
+	Wow.Transparency = Vector3.new(0,1)
+end

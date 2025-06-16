@@ -1,0 +1,74 @@
+--1) კომენტარებით ახსენით რა არის მოვლენა, რატომ არის ის მნიშვნელოვანი game development-ში
+--მოვლენა არის რაიმე როცა ხდება და ჩვენ გვჭირდება იგი იმისთვის რომ მაგალითად კილბრიკები შევქმნათ და ა.შ.
+--2) შექმენი ნაწილი, რომელიც შეხებისას ცვლის ფერს, მაგრამ მხოლოდ იმ შემთხვევაში თუ ფერი არ არის წითელი
+local prt = Instance.new("Part")
+local redd = Color3.fromRGB(255,0,0)
+prt.Touched:Connect(function(hit)
+	repeat 
+		prt.Color = Vector3.new(math.random(0,255),math.random(0,255),math.random(0,255))
+	until prt == redd
+end)
+--3) შექმენი ნაწილი, რომელიც შეხებისას იმატებს ზომას და თუ ზომა გადააჭარბებს 10x10x10-ს, გაქრება
+local icanttellyouwhattodo = Instance.new("Part")
+icanttellyouwhattodo.Touched:Connect(function(hit)
+	icanttellyouwhattodo.Size = Vector3.new(0,0,0)
+	icanttellyouwhattodo.Size += 1
+	if icanttellyouwhattodo.Size == Vector3.new(11,11,11) then
+		icanttellyouwhattodo.Transparency = 1
+	end
+end)
+--4) დაწერე ფუნქცია, რომელიც მოთამაშის შეხებისას Output-ში წერს მოთამაშის სახელს
+local partttttt = Instance.new("Part")
+function name()
+	partttttt.Touched:Connect(function(hit)
+		print(hit)
+	end)
+end
+--5) შექმენი რამდენიმე ნაწილი, რომელთაგან თითოეული განსხვავებულად რეაგირებს შეხებაზე (ერთი იზრდება, მეორე ქრება, მესამე მოძრაობს)
+local kaxunia_papunia = Instance.new("Part")
+local kaxuniaaa_papuniaaa = Instance.new("Part")
+local kaxuniaaaaa_papuniaaaaa = Instance.new("Part")
+kaxunia_papunia.Touched:Connect(function(hit)
+	kaxunia_papunia.Size += 10
+end)
+kaxuniaaa_papuniaaa.Touched:Connect(function(hit)
+	kaxuniaaa_papuniaaa.Transparency = 1
+end)
+kaxuniaaaaa_papuniaaaaa.Touched:Connect(function(hit)
+	kaxuniaaaaa_papuniaaaaa.Position = Vector3.new(math.random(0,255),math.random(0,255),math.random(0,255))
+end)
+--6) დაწერე კოდი, რომელიც გატყობინებს როცა ერთი და იგივე მოთამაშე ორჯერ შეეხო ნაწილს ზედიზედ (არ უნდა იმუშაოს თუ სხვა შეეხო შუაში)
+local parttttttttttttttttttttttt = Instance.new("Part")
+local touch = parttttttttttttttttttttttt.Touched:Connect(function(hit)
+	print(hit)
+end)
+name = "player"
+if touch * 2 then
+	print("the same" .. name .. "touched the part !")
+end
+--7) შექმენი ფერის ციკლი: ნაწილი შეხებისას იცვლის ფერს რიგით — ლურჯი → მწვანე → წითელი → ლურჯი და ასე შემდეგ
+local prtttttt = Instance.new("Part")
+prtttttt.Color = Color3.fromRGB(0,0,255)
+local touched = prtttttt.Touched:Connect(function(hit)
+	prtttttt.Color = Color3.fromRGB(0,255,0)
+end)
+if touched * 2 then
+	prtttttt.Color = Color3.fromRGB(255,0,0)
+end
+if touched * 3 then
+	prtttttt.Color = Color3.fromRGB(0,0,255)
+end
+--8) შექმენი ნაწილი, რომელიც შეხებისას ამოწმებს იმ ობიექტის სახელწოდებას ვინც შეეხო და მხოლოდ განსაზღვრული სახელი (მაგ: "Player1") მუშაობს
+local parttttttt = Instance.new("Part")
+function namee()
+	parttttttt.Touched:Connect(function(hit)
+		print(hit)
+	end)
+end
+--9) შექმენი ნაწილი, რომელიც ითვლის ყველა მოთამაშეს, ვინც მას შეხებია და ინახავს სახელებს table-ში — არ იმეორებს სახელებს
+local FURRY = Instance.new("Part")
+local tablee = {nil}
+local TOUCHED = FURRY.Touched:Connect(function(hit)
+	print(hit)
+end)
+tablee += TOUCHED

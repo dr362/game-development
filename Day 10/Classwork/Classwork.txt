@@ -1,0 +1,8 @@
+local part = Instance.new("Part")
+part.Touched:Connect(function(hit)
+	print("Character has touched a part")
+end)
+local partt = Instance.new("Part")
+partt.Touched:Connect(function(hit)
+	print(hit)
+end)
