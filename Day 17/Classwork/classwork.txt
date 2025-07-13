@@ -1,0 +1,29 @@
+local UserinputService = game:GetService("UserInputService")
+UserinputService.InputBegan:Connect(function(input, gameProcessedEvent)
+	if gameProcessedEvent then
+		return
+	end
+	print(input)
+	if input.KeyCode == Enum.KeyCode.E then
+		print("you pressed E")
+	end
+end)
+
+
+
+--2
+
+
+
+local gui = script.Parent
+local button = game.StarterGui.ScreenGui.supchik
+button.MouseButton1Click:Connect(function()
+	print("you just pressed a button :0")
+end)
+
+button.MouseEnter:Connect(function()
+	button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+end)
+button.MouseLeave:Connect(function()
+	button.BackgroundColor3 = Color3.fromRGB(106, 141, 255)
+end)

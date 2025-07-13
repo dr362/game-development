@@ -1,0 +1,4 @@
+print("task1")
+task.delay(2)
+print("task2")
+print("task3")

@@ -1,0 +1,87 @@
+local UserinputService = game:GetService("UserInputService")
+UserinputService.InputBegan:Connect(function(input, gameProcessedEvent)
+	if gameProcessedEvent then
+		return
+	end
+	if input.UserInputType == Enum.UserInputType.MouseButton1 then
+		print("left click")
+	end
+	if input.UserInputType == Enum.UserInputType.MouseButton2 then
+		print("right click")
+	end
+end)
+UserinputService.InputBegan:Connect(function(input,gameProcessedEvent)
+	if gameProcessedEvent == false then
+		return
+	end
+	if input.KeyCode == Enum.KeyCode.Q then
+		print("Q has been pressed freely")
+	end
+	print("Q has been pressed freely")
+end)
+UserinputService.InputBegan:Connect(function(input,gameProcessedEvent)
+	if input.KeyCode ==Enum.KeyCode.Z then
+		if game:FindFirstChild('Humanoid') then
+			game.Humanoid.speed *= 2
+		end
+	end
+	if input.KeyCode == Enum.KeyCode.X then
+		if game:FindFirstChild('Humanoid') then
+			game.Humanoid.speed /= 2
+		end
+	end
+end)
+
+
+
+local gui = script.Parent
+local button = game.StarterGui.ScreenGui.supchik
+button.MouseButton1Click:Connect(function()
+	print("you just pressed a button :0")
+end)
+
+button.MouseEnter:Connect(function()
+	button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+end)
+button.MouseLeave:Connect(function()
+	button.BackgroundColor3 = Color3.fromRGB(106, 141, 255)
+end)
+UserinputService.InputBegan:Connect(function(input,gameProcessedEvent)
+	if input.KeyCode == Enum.KeyCode.F then
+		text.Visible = true
+	end
+end)
+local show = game.StarterGui.ScreenGui.show
+local hide = game.StarterGui.ScreenGui.hide
+local text = game.StarterGui.ScreenGui.supichiki
+text.Visible = false
+show.MouseButton1Click:Connect(function()
+	text.Visible = true
+end)
+hide.MouseButton1Click:Connect(function()
+	text.Visible = false
+end)
+local textbutton = game.StarterGui.ScreenGui.TextButton
+textbutton.MouseButton1Click:Connect(function()
+	BrickColor.Random()
+end)
+textbutton.TextColor3 = Color3.fromRGB(255, 0, 0)
+local textbutton = game.StarterGui.ScreenGui.TextButton
+textbutton.MouseButton1Click:Connect(function()
+	BrickColor.Random()
+end)
+textbutton.TextColor3 = Color3.fromRGB(255, 0, 0)
+textbutton.TextColor3 = Color3.fromRGB(255, 0, 0)
+local framebutton = game.StarterGui.ScreenGui.frame
+local isOpen = game.StarterGui.ScreenGui.frame.Visible == true
+framebutton.MouseButton1Click:Connect(function()
+	if isOpen == false then
+		game.StarterGui.ScreenGui.frame.Visible = true
+		isOpen = true
+		framebutton.Text = "Close"
+	elseif isOpen == true then
+		game.StarterGui.ScreenGui.frame.Visible = false
+		isOpen = false
+		framebutton.Text = "Open"
+	end
+end)

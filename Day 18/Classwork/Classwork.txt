@@ -1,0 +1,37 @@
+local hi = game.StarterGui.ScreenGui.TextLabel
+task.wait(5)
+hi.Position = UDim2.new(0.5,0,0.2,0)
+hi.Size = UDim2.new(0.5,0,0.2,0)
+
+local button = gui.abuttonthatchangestext
+local text = gui.TextLabel
+local random_wordsiguess = {
+	"hi",
+	"bye",
+	"sup",
+	"idk",
+	"boo",
+	"touch grass"
+}
+button.MouseButton1Click:Connect(function()
+	local random = math.random(1,#random_wordsiguess)
+	local words = random_wordsiguess[random]
+	
+	text.Text = words
+end)
+
+local correct = gui.hi
+local INCORRECT = gui.die
+local question = gui.bye
+correct.MouseButton1Click:Connect(function()
+	question.Text = "CORRECT!!!!!"
+	local Player = game:FindFirstChild("Humanoid") 
+	game.Humanoid.Speed += 100
+	question.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+end)
+INCORRECT.MouseButton1Click:Connect(function()
+	question.Text = "INCORRECT DIEEEEE"
+	local byebye = game:FindFirstChild("Humanoid")
+	game.Humanoid.Health = 0
+	question.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+end)

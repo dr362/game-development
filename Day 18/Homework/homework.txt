@@ -1,0 +1,63 @@
+local gui = script.Parent
+local button = gui:WaitForChild("idk")
+task.wait(5)
+button.Position = UDim2.new(0,0.9,0,0.5)
+button.Size = UDim2.new(0,0.40,0,0.20)
+
+button.MouseButton1Click:Connect(function()
+	local color = Vector3.new(Random.new(0,255),Random.new(0,255),Random.new(0,255))
+	button.TextColor = color
+end)
+
+local text = gui:WaitForChild("makaroni")
+local buttoooon = gui:WaitForChild("table")
+text.Text = "დაელოდე 5 წამი და ნახავ მაგიას"
+buttoooon.MouseButton1Click:Connect(function()
+	task.delay(5,function()
+		text.Text = "შესანიშნავი მოთამაშე ხარ!"
+	end)
+	text.Text = "შესანიშნავი მოთამაშე ხარ!"
+end)
+
+local textB = gui:WaitForChild("hiiiiiiiii")
+textB.MouseButton1Click:Connect(function()
+	local idkwidk = Instance.new("TextLabel",game.StarterGui.ScreenGui)
+	idkwidk.Name = "idkwidk"
+	local words = {"გილოცავ","კარგად გამოგდის","ახალი რეკორდი"}
+	while true do
+		wait(5)
+		idkwidk.Text = "გილოცავ"
+		wait(5)
+		idkwidk.Text = "კარგად გამოგდის"
+		wait(5)
+		idkwidk.Text = "ახალი რეკორდი"
+	end
+end)
+
+local ooooooo = gui:WaitForChild("ooooooooo")
+ooooooo.MouseEnter:Connect(function()
+	ooooooo.Text = "დააჭირე"
+end)
+ooooooo.MouseLeave:Connect(function()
+	ooooooo.Text = "მზად არის დასაჭერად"
+end)
+while true do
+	ooooooo.MouseButton1Click:Connect(function()
+		ooooooo.Text = "ხელმეორედ დააჭირე"
+	end)
+	ooooooo.MouseButton1Click:Connect(function()
+		ooooooo.Text = "დააჭირე"
+	end)
+end
+
+local textuniebi = gui:WaitForChild("byeeee")
+local buttonuniebi = gui:WaitForChild("Magicbutton")
+buttonuniebi.MouseLeave:Connect(function()
+	textuniebi.BackgroundColor3 = Color3.new(255,255,255)
+end)
+buttonuniebi.MouseEnter:Connect(function()
+	textuniebi.BackgroundColor3 = Color3.new(255,0,0)
+end)
+buttonuniebi.MouseButton1Click:Connect(function()
+	textuniebi.Size += UDim2.new(1,1,1,1)
+end)
